@@ -5,7 +5,7 @@ if(!require('g20_conexion.php')){
 }
 
 //WHERE id = 42
-$enlace = mysql_connect('localhost', "root", "");
+//$enlace = mysql_connect('localhost', "root", "");
 $sql       = "SELECT  * FROM g20_especialidades";
 $resultado = mysqli_query($conexion, $sql);
 
