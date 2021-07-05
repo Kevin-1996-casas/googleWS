@@ -1,5 +1,8 @@
 runtime: php74 # Replace with php74 to use PHP 7.4
 
+runtime_config:
+  document_root: .
+
 
 handlers:
 # Serve images as static resources.
