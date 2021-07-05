@@ -6,11 +6,11 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
     case '/index.php':
         require 'index.php';
         break;
-    case '/g20_conexion_p':
-        require 'g20_conexion_p.php';
+    case '/g20_conexion':
+        require 'g20_conexion.php';
         break;
-    case '/g20_conexion_p.php':
-        require 'g20_conexion_p.php';
+    case '/g20_conexion.php':
+        require 'g20_conexion.php';
         break;
     default:
         http_response_code(404);
