@@ -1,3 +1,6 @@
 runtime: php74 # Replace with php74 to use PHP 7.4
 
+entrypoint:
+    serve handler.php
+
 
