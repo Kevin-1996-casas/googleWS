@@ -9,6 +9,6 @@ $dbPass = 'grupo20sistema';
 $mysqli = new mysqli('127.0.0.1', $dbUser, $dbPass, $dbName, 3306);
 if ($conexion->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $conexion->connect_errno . ") " . $conexion->connect_error;
-}
+}else{echo "Conexion exitosa";}
 
 ?>
