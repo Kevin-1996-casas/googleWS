@@ -7,7 +7,7 @@ $dbUser = getenv('CLOUDSQL_USER');
 $dbPass = getenv('CLOUDSQL_PASSWORD');
 $dbDns = getenv('CLOUDSQl_DSN');
 //$conexion = new mysqli('34.95.235.163', "root", "grupo20sistema", "grupo20sistema", 3306);
-$conexion = new mysqli('127.0.0.1', $dbUser, $dbPass, $dbName, $dbDns);
+$conexion = new mysqli(null, $dbUser, $dbPass, $dbName, $dbDns);
 if ($conexion->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $conexion->connect_errno . ") " . $conexion->connect_error;
 }else{
