@@ -6,40 +6,41 @@ $dbName = 'grupo20sistema';
 $dbUser = 'root';
 $dbPass = 'grupo20sistema';
 //$conexion = new mysqli('34.95.235.163', "root", "grupo20sistema", "grupo20sistema", 3306);
-$mysqli = new mysqli('127.0.0.1', $dbUser, $dbPass, $dbName, 3306);
+$conexion = new mysqli('127.0.0.1', $dbUser, $dbPass, $dbName, 3306);
 if ($conexion->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $conexion->connect_errno . ") " . $conexion->connect_error;
-}else{echo "Conexion exitosa";
+}else{
      $sql       = "SELECT  * FROM g20_especialidades";
-$resultado = mysqli_query($conexion, $sql);
+     $resultado = mysqli_query($conexion, $sql);
 
 
 
-//$resultado   =  mysqli_query($conexion, "INSERT INTO $tabla_db1 (doc,nombre,direccion,telefono) values ('$doc','$nombre','$dir','$tel')");
+    //$resultado   =  mysqli_query($conexion, "INSERT INTO $tabla_db1 (doc,nombre,direccion,telefono) values ('$doc','$nombre','$dir','$tel')");
       
 
-//$resultado = mysql_query($sql, $enlace);
-$health_profile_codes2=array();
-if (!$resultado) {
-    echo "Error de BD, no se pudo consultar la base de datos\n";
-    echo "Error MySQL: " . mysql_error();
-    exit;
-}else{
+    //$resultado = mysql_query($sql, $enlace);
+    $health_profile_codes2=array();
+    if (!$resultado) {
+        echo "Error de BD, no se pudo consultar la base de datos\n";
+        echo "Error MySQL: " . mysql_error();
+        exit;
+    }else{
     
-    while ($fila = mysql_fetch_assoc($resultado)) {
-        $tmp=array();
-        $tmp['codigo']=$fila['codigo'];
-        $tmp['especialidad']=$fila['especialidad'];
+        while ($fila = mysql_fetch_assoc($resultado)) {
+            $tmp=array();
+            $tmp['codigo']=$fila['codigo'];
+            $tmp['especialidad']=$fila['especialidad'];
         
-        array_push($health_profile_codes2, $tmp);
+            array_push($health_profile_codes2, $tmp);
         
+        }
     }
-}
 
-//$health_profile_codes2=array();
+    //$health_profile_codes2=array();
 
 
-//array_push($health_profile_codes2, $tmp);
-echo(json_encode(array("Especialidades" =>$health_profile_codes2)));}
+    //array_push($health_profile_codes2, $tmp);
+    echo(json_encode(array("Especialidades" =>$health_profile_codes2)));
+  }
 
 ?>
