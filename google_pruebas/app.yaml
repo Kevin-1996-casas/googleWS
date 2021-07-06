@@ -16,5 +16,11 @@ handlers:
 
 entrypoint:
     serve handler.php
+    
+env_variables:
+  CLOUDSQL_USER: root
+  CLOUDSQL_DB: grupo20sistema
+  CLOUDSQL_PASSWORD: grupo20sistema
+  CLOUDSQL_DSN: /cloudsql/myphpapp-318701:southamerica-east1:grupo20sistema
 
 
